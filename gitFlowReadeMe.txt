@@ -1,0 +1,5 @@
+next release branch : nextRelease
+
+first branch option : develop
+
+else : default convention
