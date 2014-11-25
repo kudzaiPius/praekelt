@@ -3,6 +3,6 @@ from .models import Lecturer
 
 
 class LecturerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'surname', 'full_name')
+    list_display = ('surname', 'name', 'full_name')
 
 admin.site.register(Lecturer, LecturerAdmin)

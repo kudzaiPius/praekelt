@@ -14,5 +14,3 @@ class Lecturer(models.Model) :
 
     class Meta:
         unique_together = ('name', 'surname',)
-
-    

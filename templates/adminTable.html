@@ -1,0 +1,29 @@
+{% if ord_lect %}
+	<head>
+		<style>
+			table, th, td {
+			    border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+	    <div id="table content">
+	    	<table>
+	    		<tr>
+	    			<th>Name</th>
+	    			<th>Surname</th>
+	    			<th>Full Name</th>
+	    		</tr>
+	        	{% for lect in ord_lect %}
+		        	<tr>
+		        		<td>{{lect.name}}</td>
+		        		<td>{{lect.surname}}</td>
+		        		<td>{{lect.full_name}}</td>
+		        	</tr>
+		        {% endfor %}
+	        </table>
+	    </div>
+	</body>
+{% else %}
+    <p>No Lecturers are available.</p>
+{% endif %}
