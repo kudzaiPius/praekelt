@@ -16,12 +16,14 @@
 	    			<th>Name</th>
 	    			<th>Surname</th>
 	    			<th>Full Name</th>
+	    			<th>Date of Birth</th>
 	    		</tr>
 	        	{% for lect in ord_lect %}
 		        	<tr>
 		        		<td>{{lect.name}}</td>
 		        		<td>{{lect.surname}}</td>
 		        		<td>{{lect.full_name}}</td>
+		        		<td>{{lect.date_of_birth}}</td>
 		        	</tr>
 		        {% endfor %}
 	        </table>
