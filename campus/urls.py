@@ -6,7 +6,3 @@ urlpatterns = [
    url(r'^$', views.messageLecturer, name='messageLecturer'),
    url(r'^$', views.adminTable, name='adminTable'),
 ]
-
-#urlpatterns = [
-#   url(r'^$', views.messageLecturer, name='messageLecturer'),
-#]
