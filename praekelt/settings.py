@@ -31,6 +31,8 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# set append_slash to true for redirects
+APPEND_SLASH = True
 
 # Application definition
 

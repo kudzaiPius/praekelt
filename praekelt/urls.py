@@ -6,7 +6,8 @@ urlpatterns = patterns('',
     # url(r'^$', 'praekelt.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/campus/lecturers/$', 'campus.views.adminTable', name='lecturers'),
-    url(r'^admin/campus/message-Lecturer/$', 'campus.views.messageLecturer', name='messageLecturer'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^lecturers/$', 'campus.views.adminTable', name='lecturers'),
+    url(r'^message-Lecturer/$', 'campus.views.messageLecturer', name='messageLecturer'),
+    url(r'^messageLecturer/$', 'campus.views.messageLecturer', name='messagePOST'),
 )
