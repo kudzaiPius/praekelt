@@ -12,5 +12,6 @@ def validate_over_18(value):
 
 """"""
 def validate_name(str):
-	if str.isalpha() or str.isnumeric():
-		raise ValidationError("Invalid entry : name cannot contain numbers.")
+	for c in str:
+		if not c.isalpha() and not c == ' ':
+			raise ValidationError("Invalid entry : name cannot contain numbers or symbols.")
