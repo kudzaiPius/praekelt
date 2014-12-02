@@ -7,4 +7,4 @@ from campus import forms
 
 @admin.register(Lecturer)
 class LecturerAdmin(admin.ModelAdmin):
-    form = forms.customAdminForm
+    list_display = ('name', 'surname', 'full_name') 

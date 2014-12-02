@@ -23,7 +23,7 @@ def messageLecturer(request):
         form = messageLecturerForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            return HttpResponseRedirect('/campus/')
+            return HttpResponseRedirect('/message-Lecturer/')
     else:
         form = messageLecturerForm()
     lect = m.Lecturer.objects.order_by("name", "surname")
