@@ -1,0 +1,22 @@
+<form action={% url "message_lecturer"%} method="post">{% csrf_token %}
+	<head>
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+	</head>
+	<body>
+		<div>
+			<label><b>Lecturer: </b></label>
+			<select name="item_id">
+				{% for lecturer in ordered_lecturers %}
+				<option value="{{ lecturer.full_name }}" required="true">{{ lecturer.full_name }}</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div class="gap"></div>
+		<div>
+		    <label for="message"> <b> Message: </b> </label>
+		    <textarea name="message_text" rows="5" cols="100" value="{{ message_text }}" required="true"></textarea>
+		    <input type="submit" value="Send Message" />
+		</div>
+	</body>
+</form>

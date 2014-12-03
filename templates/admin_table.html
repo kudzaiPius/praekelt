@@ -1,0 +1,32 @@
+{% if ordered_lecturers %}
+<head>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+</head>
+<body>
+    <div id="table content">
+    	<table class="juiceTable">
+    		<tr>
+    			<th>Name</th>
+    			<th>Surname</th>
+    			<th>Full Name</th>
+    			<th>Date of Birth</th>
+    		</tr>
+        	{% for lecturer in ordered_lecturers %}
+	        <tr>
+	        	<td>{{lecturer.name}}</td>
+	        	<td>{{lecturer.surname}}</td>
+	        	<td>{{lecturer.full_name}}</td>
+	        	<td>{{lecturer.date_of_birth}}</td>
+	        </tr>
+	        {% endfor %}
+        </table>
+    </div>
+    <div class="gap"></div>
+    <div>
+    	<a href="/admin/"><b>Home</b></a> 
+    </div>
+</body>
+{% else %}
+<p>No Lecturers are available.</p>
+{% endif %}

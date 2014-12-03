@@ -1,9 +1,10 @@
-from django.contrib import admin
 from django import forms
-from django.core.exceptions import ValidationError
+from django.contrib import admin
 from django.core import validators
-from .models import Lecturer
+from django.core.exceptions import ValidationError
+
 from campus import forms
+from campus.models import Lecturer
 
 @admin.register(Lecturer)
 class LecturerAdmin(admin.ModelAdmin):

@@ -1,33 +1,36 @@
+from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader
+
+from campus.models import Lecturer
 from campus.forms import messageLecturerForm
 
-from campus import models as m
-
 # Create your views here.
-def adminTable(request):
-     template = loader.get_template('adminTable.html')
+def admin_table(request):
+     template = loader.get_template("admin_table.html")
 
-     ordered_lecturers = m.Lecturer.objects.order_by("name", "surname")
+     ordered_lecturers = Lecturer.objects.order_by("name", "surname")
 
      context = Context({
-          'ord_lect': ordered_lecturers,
+          "ordered_lecturers": ordered_lecturers,
      })
  
      return HttpResponse(template.render(context))
 
-def messageLecturer(request):
-    if request.method == 'POST':
+def message_lecturer(request):
+    if request.method == "POST":
         # create a form instance and populate it with data from the request:
         form = messageLecturerForm(request.POST)
         # check whether it's valid:
         if form.is_valid():
-            return HttpResponseRedirect('/message-Lecturer/')
+            return HttpResponseRedirect(reverse("message_lecturer"))
     else:
         form = messageLecturerForm()
-    lect = m.Lecturer.objects.order_by("name", "surname")
+
+    ordered_lecturers = Lecturer.objects.order_by("name", "surname")
     context = Context({
-		'lect': lect,
+		"ordered_lecturers": ordered_lecturers,
 	})
-    return HttpResponse(loader.get_template('messageLecturer.html').render(context), {'form':form})
+    return HttpResponse(loader.get_template("message_lecturer.html").render(
+        context), {"form":form})

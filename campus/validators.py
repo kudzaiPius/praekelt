@@ -1,17 +1,22 @@
-from django.core.exceptions import ValidationError
 import datetime
+from django.core.exceptions import ValidationError
 
-"""Validation method to ensure a given birthdate is atleast 18 years in the past."""
+"""Validation method to ensure a given birthdate is atleast 18 years in the 
+   past.
+"""
 def validate_over_18(value):
 	dt = datetime.date.today()
-
 	yr = dt.year
 
 	if value > dt.replace(year=yr-18):
-		raise ValidationError("Invalid age : candidate must be atleast 18 years old.")
+		raise ValidationError(
+			"Invalid age : candidate must be atleast 18 yearsold.")
 
-""""""
+"""Check if a string is a valid representation for a name(spaces between 
+	multiple names; 
+"""
 def validate_name(str):
 	for c in str:
 		if not c.isalpha() and not c == ' ':
-			raise ValidationError("Invalid entry : name cannot contain numbers or symbols.")
+			raise ValidationError(
+				"Invalid entry : name cannot contain numbers or symbols.")
