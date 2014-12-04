@@ -12,10 +12,14 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+#TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+#TEMPLATE_DIRS = [os.path.dirname(os.path.dirname("/campus/templates"))]
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, "campus/templates")]
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    #os.path.join(BASE_DIR, "static"),
+    #os.path.dirname(os.path.dirname("/campus/static")),
+    os.path.join(BASE_DIR, "campus/static"),
     '/var/www/static/',
 )
 # Quick-start development settings - unsuitable for production
@@ -56,9 +60,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'praekelt.urls'
+ROOT_URLCONF = 'project.urls'
 
-WSGI_APPLICATION = 'praekelt.wsgi.application'
+WSGI_APPLICATION = 'project.wsgi.application'
 
 
 # Database
