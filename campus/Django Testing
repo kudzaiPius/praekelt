@@ -1,8 +1,0 @@
-Test suite(collection of tests)
-	* New code : Validators for parts
-	* Refactoring : ensure changes do not affect logic/results
-Web testing complicated by several logic layers.
-
-METHOD :
-	'unittest' module built in in Python.
-	other frameworks possible(Django facilitates this)
