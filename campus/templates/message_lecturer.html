@@ -1,10 +1,8 @@
+{% include "base.html" %}
+
+{% block content %}
 <form action={% url "message_lecturer"%} method="post">{% csrf_token %}
-	<head>
-		{% load staticfiles %}
-		<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
-	</head>
-	<body>
-		<div>
+		<div class="my-special-class">
 			<label><b>Lecturer: </b></label>
 			<select name="item_id">
 				{% for lecturer in ordered_lecturers %}
@@ -18,5 +16,5 @@
 		    <textarea name="message_text" rows="5" cols="100" value="{{ message_text }}" required="true"></textarea>
 		    <input type="submit" value="Send Message" />
 		</div>
-	</body>
 </form>
+{% endblock %}
